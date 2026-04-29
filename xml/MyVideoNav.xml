@@ -112,7 +112,7 @@
 						<width>537</width>
 						<height>372</height>
 						<label>$LOCALIZE[19055]</label>
-						<visible>String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+						<visible>String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder + ![String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(Container.ShowPlot)]</visible>
 					</control>
 					<control type="image">
 						<depth>DepthContentPopout</depth>

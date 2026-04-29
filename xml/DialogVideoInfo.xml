@@ -115,9 +115,10 @@
 						<height>211</height>
 						<aligny>bottom</aligny>
 						<label/>
-						<onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Header,$LOCALIZE[207],home)</onclick>
+						<onclick condition="!String.IsEmpty(ListItem.Plot) | [String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(Container.ShowPlot)]">SetProperty(TextViewer_Header,$LOCALIZE[207],home)</onclick>
 						<onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Text,$ESCINFO[ListItem.Plot],home)</onclick>
-						<onclick condition="!String.IsEmpty(ListItem.Plot)">ActivateWindow(1102)</onclick>
+						<onclick condition="String.IsEqual(ListItem.DBType,season) + String.IsEmpty(ListItem.Plot) + !String.IsEmpty(Container.ShowPlot)">SetProperty(TextViewer_Text,$ESCINFO[Container.ShowPlot],home)</onclick>
+						<onclick condition="!String.IsEmpty(ListItem.Plot) | [String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(Container.ShowPlot)]">ActivateWindow(1102)</onclick>
 						<onleft>138</onleft>
 						<onright>138</onright>
 						<ondown>5000</ondown>
@@ -131,9 +132,10 @@
 						<height>211</height>
 						<aligny>bottom</aligny>
 						<label/>
-						<onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Header,$LOCALIZE[207],home)</onclick>
+						<onclick condition="!String.IsEmpty(ListItem.Plot) | [String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(Container.ShowPlot)]">SetProperty(TextViewer_Header,$LOCALIZE[207],home)</onclick>
 						<onclick condition="!String.IsEmpty(ListItem.Plot)">SetProperty(TextViewer_Text,$ESCINFO[ListItem.Plot],home)</onclick>
-						<onclick condition="!String.IsEmpty(ListItem.Plot)">ActivateWindow(1102)</onclick>
+						<onclick condition="String.IsEqual(ListItem.DBType,season) + String.IsEmpty(ListItem.Plot) + !String.IsEmpty(Container.ShowPlot)">SetProperty(TextViewer_Text,$ESCINFO[Container.ShowPlot],home)</onclick>
+						<onclick condition="!String.IsEmpty(ListItem.Plot) | [String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(Container.ShowPlot)]">ActivateWindow(1102)</onclick>
 						<onleft>138</onleft>
 						<onright>138</onright>
 						<ondown>5000</ondown>
@@ -148,7 +150,7 @@
 						<height>160</height>
 						<align>left</align>
 						<font>fontplot2</font>
-						<label fallback="19055">$INFO[ListItem.Plot] $INFO[Container(5900).ListItem.Plot]</label>
+						<label fallback="19055">$VAR[VideoInfoPlotVar] $INFO[Container(5900).ListItem.Plot]</label>
 						<autoscroll delay="12000" time="4000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 						<visible>!Skin.HasSetting(enable_LibraryClearArt) + !String.IsEqual(Control.GetLabel(3336),fallback.png)</visible>
 					</control>
@@ -159,7 +161,7 @@
 						<height>160</height>
 						<align>left</align>
 						<font>fontplot2</font>
-						<label fallback="19055">$INFO[ListItem.Plot] $INFO[Container(5900).ListItem.Plot]</label>
+						<label fallback="19055">$VAR[VideoInfoPlotVar] $INFO[Container(5900).ListItem.Plot]</label>
 						<autoscroll delay="12000" time="4000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 						<visible>Skin.HasSetting(enable_LibraryClearArt) | String.IsEqual(Control.GetLabel(3336),fallback.png)</visible>
 					</control>
