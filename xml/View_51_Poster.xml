@@ -176,7 +176,7 @@
 						<label>$VAR[PlotSpoilerVar]</label>
 						<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
-						<visible>!ListItem.IsCollection + !String.IsEmpty(ListItem.Plot)</visible>
+						<visible>!ListItem.IsCollection + [!String.IsEmpty(ListItem.Plot) | [String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(Container.ShowPlot)]]</visible>
 					</control>
 					<control type="textbox">
 						<left>585</left>
@@ -184,7 +184,7 @@
 						<height>200</height>
 						<right>50</right>
 						<label>$LOCALIZE[19055]</label>
-						<visible>String.IsEmpty(ListItem.Plot)</visible>
+						<visible>String.IsEmpty(ListItem.Plot) + ![String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(Container.ShowPlot)]</visible>
 					</control>
 				</control>
 				<control type="list" id="50051">
