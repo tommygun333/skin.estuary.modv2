@@ -1137,23 +1137,23 @@
 				</include>
 				<include content="MediaFlag">
 					<param name="width" value="5" />
-					<param name="visible" value="[!Skin.HasSetting(show_tmdbflag) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)] | [!Skin.HasSetting(show_mpaaflag) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.mpaa)]" />
+					<param name="visible" value="[!Skin.HasSetting(show_tmdbflag) + [!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating) | [!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(IMDbRating)) + String.IsEqual($PARAM[infolabel_prefix]ListItem.Property(IsKodiSeerr),true)]]] | [!Skin.HasSetting(show_mpaaflag) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.mpaa)]" />
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="flags/tmdb.png" />
+					<param name="texture" value="$VAR[RatingFlagTextureVar]" />
 					<param name="width" value="104" />
 					<param name="label_width" value="58" />
 					<param name="label_left" value="44" />
-					<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Rating]" />
-					<param name="visible" value="!Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,set) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)" />
+					<param name="label" value="$VAR[RatingFlagLabelVar]" />
+					<param name="visible" value="!Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,set) + [!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating) | [!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(IMDbRating)) + String.IsEqual($PARAM[infolabel_prefix]ListItem.Property(IsKodiSeerr),true)]]" />
 				</include>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/imdb.png" />
 					<param name="width" value="104" />
 					<param name="label_width" value="58" />
 					<param name="label_left" value="44" />
-					<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Rating]" />
-					<param name="visible" value="Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,set) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)" />
+					<param name="label" value="$VAR[RatingFlagLabelVar]" />
+					<param name="visible" value="Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,set) + [!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating) | [!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(IMDbRating)) + String.IsEqual($PARAM[infolabel_prefix]ListItem.Property(IsKodiSeerr),true)]]" />
 				</include>
 				<include content="MediaFlag">
 					<param name="texture" value="$VAR[MPAAImageVar]" />
@@ -1312,7 +1312,18 @@
 		<definition>
 			<control type="group">
 				<width>104</width>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(imdb)) + Skin.HasSetting(infodialog_rating)</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(IMDbRating)) + String.IsEqual($PARAM[infolabel_prefix]ListItem.Property(IsKodiSeerr),true) + Skin.HasSetting(infodialog_rating)</visible>
+				<include content="MediaFlag">
+					<param name="texture" value="flags/imdb.png" />
+					<param name="width" value="104" />
+					<param name="label_width" value="58" />
+					<param name="label_left" value="44" />
+					<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Property(IMDbRating)]" />
+				</include>
+			</control>
+			<control type="group">
+				<width>104</width>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(imdb)) + Skin.HasSetting(infodialog_rating) + ![!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(IMDbRating)) + String.IsEqual($PARAM[infolabel_prefix]ListItem.Property(IsKodiSeerr),true)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/imdb.png" />
 					<param name="width" value="104" />
