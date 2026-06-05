@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <smartplaylist type="episodes">
-    <name>Recent Episodes</name>
+    <name>Recent Anime Episodes</name>
     <match>all</match>
-    <rule field="genre" operator="isnot">
+    <rule field="genre" operator="is">
         <value>Anime</value>
     </rule>
     <rule field="dateadded" operator="after">

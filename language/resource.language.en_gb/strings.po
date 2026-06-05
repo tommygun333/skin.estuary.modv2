@@ -3008,3 +3008,39 @@ msgctxt "#31718"
 msgid "Left/Right switches between Channelgroups"
 msgstr ""
 
+msgctxt "#31719"
+msgid "Anime"
+msgstr ""
+
+msgctxt "#31720"
+msgid "Manage items from 'Anime' widget"
+msgstr ""
+
+msgctxt "#31721"
+msgid "Recently added anime episodes"
+msgstr ""
+
+msgctxt "#31722"
+msgid "In progress anime"
+msgstr ""
+
+msgctxt "#31723"
+msgid "Unwatched anime"
+msgstr ""
+
+msgctxt "#31724"
+msgid "Random anime"
+msgstr ""
+
+msgctxt "#31725"
+msgid "Last updated anime"
+msgstr ""
+
+msgctxt "#31726"
+msgid "Anime genres"
+msgstr ""
+
+msgctxt "#31727"
+msgid "Hide watched anime from recently added"
+msgstr ""
+
