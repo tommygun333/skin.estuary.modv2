@@ -27,42 +27,26 @@
 					<onleft>60</onleft>
 					<pagecontrol>60</pagecontrol>
 					<orientation>vertical</orientation>
-					<control type="radiobutton" id="11111">
-						<label>$LOCALIZE[31297] : $LOCALIZE[31709]</label>
+					<control type="button" id="11111">
+						<label>$LOCALIZE[31729]</label>
+						<label2>$INFO[Skin.String(anime_source_path)]</label2>
 						<include>DefaultSettingButton</include>
-						<selected>Skin.HasSetting(hide_updatedAnime)</selected>
-						<onclick>Skin.ToggleSetting(hide_updatedAnime)</onclick>
+						<onclick condition="!Skin.String(anime_source_path)">Skin.SetPath(anime_source_path)</onclick>
+						<onclick condition="Skin.String(anime_source_path)">Skin.Reset(anime_source_path)</onclick>
 					</control>
 					<control type="radiobutton" id="11112">
-						<label>$LOCALIZE[31297] : $LOCALIZE[31721]</label>
+						<label>$LOCALIZE[31297] : $LOCALIZE[20387]</label>
 						<include>DefaultSettingButton</include>
-						<selected>Skin.HasSetting(hide_recentlyanime)</selected>
-						<onclick>Skin.ToggleSetting(hide_recentlyanime)</onclick>
+						<selected>Skin.HasSetting(hide_anime_recentlyadded)</selected>
+						<onclick>Skin.ToggleSetting(hide_anime_recentlyadded)</onclick>
+						<enable>Skin.String(anime_source_path)</enable>
 					</control>
 					<control type="radiobutton" id="11113">
-						<label> ∟$LOCALIZE[31727]</label>
-						<include>DefaultSettingButton</include>
-						<selected>Skin.HasSetting(HideWatchedAnimeFromRecently)</selected>
-						<onclick>Skin.ToggleSetting(HideWatchedAnimeFromRecently)</onclick>
-						<enable>!Skin.HasSetting(hide_recentlyanime)</enable>
-					</control>
-					<control type="radiobutton" id="11114">
-						<label>$LOCALIZE[31297] : $LOCALIZE[31722]</label>
-						<include>DefaultSettingButton</include>
-						<selected>Skin.HasSetting(hide_inprogressanime)</selected>
-						<onclick>Skin.ToggleSetting(hide_inprogressanime)</onclick>
-					</control>
-					<control type="radiobutton" id="11115">
-						<label>$LOCALIZE[31297] : $LOCALIZE[31723]</label>
-						<include>DefaultSettingButton</include>
-						<selected>Skin.HasSetting(hide_unwatchedanime)</selected>
-						<onclick>Skin.ToggleSetting(hide_unwatchedanime)</onclick>
-					</control>
-					<control type="radiobutton" id="11116">
 						<label>$LOCALIZE[31297] : $LOCALIZE[31724]</label>
 						<include>DefaultSettingButton</include>
-						<selected>Skin.HasSetting(hide_randomanime)</selected>
-						<onclick>Skin.ToggleSetting(hide_randomanime)</onclick>
+						<selected>Skin.HasSetting(hide_anime_random)</selected>
+						<onclick>Skin.ToggleSetting(hide_anime_random)</onclick>
+						<enable>Skin.String(anime_source_path)</enable>
 					</control>
 				</control>
 				<include content="SettingsScrollbar">

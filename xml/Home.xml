@@ -298,59 +298,33 @@
 					<control type="grouplist" id="19001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>19010</pagecontrol>
-						<include content="WidgetListPoster" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_inprogressanime)">
-							<param name="content_path" value="special://skin/playlists/inprogress_anime.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31722]"/>
+						<include content="WidgetListPoster" condition="!String.IsEmpty(Skin.String(anime_source_path)) + !Skin.HasSetting(hide_anime_recentlyadded)">
+							<param name="content_path" value="$INFO[Skin.String(anime_source_path)]"/>
+							<param name="sortby" value="dateadded"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$LOCALIZE[20387]"/>
+							<param name="widget_header_focus" value="$INFO[Container(19100).ListItem.Title, | ]$INFO[Container(19100).ListItem.Year, (,)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="19100"/>
+						</include>
+						<include content="WidgetListPoster" condition="!String.IsEmpty(Skin.String(anime_source_path)) + !Skin.HasSetting(hide_anime_random)">
+							<param name="content_path" value="$INFO[Skin.String(anime_source_path)]"/>
+							<param name="sortby" value="random"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$LOCALIZE[31724]"/>
 							<param name="widget_header_focus" value="$INFO[Container(19200).ListItem.Title, | ]$INFO[Container(19200).ListItem.Year, (,)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="browse" value="never"/>
 							<param name="list_id" value="19200"/>
 						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_updatedAnime)">
-							<param name="content_path" value="special://skin/playlists/last_updated_anime.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31725]"/>
-							<param name="widget_header_focus" value="$INFO[Container(19800).ListItem.Title, | ]$INFO[Container(19800).ListItem.Year, (,)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="19800"/>
-						</include>
-						<include content="WidgetListEpisodes" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_recentlyanime) + Skin.HasSetting(HomeBanner)">
-							<param name="content_path" value="$VAR[HideWatchedAnimeFromRecentlyVar]"/>
-							<param name="widget_header" value="$LOCALIZE[31721]"/>
-							<param name="widget_header_focus" value="$INFO[Container(19100).ListItem.TVShowTitle, | , - ]$INFO[Container(19100).ListItem.Season,,x]$INFO[Container(19100).ListItem.Episode,,. ]$INFO[Container(19100).ListItem.Title]$INFO[Container(19100).ListItem.Year, (,)]"/>
-							<param name="browse" value="never"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="19100"/>
-						</include>
-						<include content="WidgetListEpisodesBanner" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_recentlyanime) + !Skin.HasSetting(HomeBanner)">
-							<param name="content_path" value="$VAR[HideWatchedAnimeFromRecentlyVar]"/>
-							<param name="widget_header" value="$LOCALIZE[31721]"/>
-							<param name="widget_header_focus" value="$INFO[Container(191001).ListItem.TVShowTitle, | , - ]$INFO[Container(191001).ListItem.Season,,x]$INFO[Container(191001).ListItem.Episode,,. ]$INFO[Container(191001).ListItem.Title]$INFO[Container(191001).ListItem.Year, (,)]"/>
-							<param name="browse" value="never"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="191001"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_unwatchedanime)">
-							<param name="content_path" value="special://skin/playlists/unwatched_anime.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31723]"/>
-							<param name="widget_header_focus" value="$INFO[Container(19300).ListItem.Title, | ]$INFO[Container(19300).ListItem.Year, (,)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="19300"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_randomanime)">
-							<param name="content_path" value="special://skin/playlists/random_anime.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31724]"/>
-							<param name="widget_header_focus" value="$INFO[Container(19400).ListItem.Title, | ]$INFO[Container(19400).ListItem.Year, (,)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="browse" value="never"/>
-							<param name="list_id" value="19400"/>
-						</include>
 					</control>
-					<include content="ImageWidget" condition="!Library.HasContent(tvshows)">
-						<param name="text_label" value="$LOCALIZE[31104]" />
-						<param name="button_label" value="$LOCALIZE[10048]" />
-						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
-						<param name="button_id" value="19400"/>
+					<include content="ImageWidget">
+						<param name="text_label" value="$LOCALIZE[31728]" />
+						<param name="button_label" value="$LOCALIZE[31729]" />
+						<param name="button_onclick" value="Skin.SetPath(anime_source_path)"/>
+						<param name="button_id" value="19300"/>
 						<param name="visible_2" value="false"/>
+						<param name="visible" value="String.IsEmpty(Skin.String(anime_source_path))"/>
 					</include>
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
 						<param name="scrollbar_id" value="19010"/>

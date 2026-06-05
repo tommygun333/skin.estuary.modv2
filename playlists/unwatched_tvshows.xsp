@@ -2,9 +2,6 @@
 <smartplaylist type="tvshows">
     <name>Unwatched TV shows</name>
     <match>all</match>
-    <rule field="genre" operator="isnot">
-        <value>Anime</value>
-    </rule>
     <rule field="numwatched" operator="is">
         <value>0</value>
     </rule>
