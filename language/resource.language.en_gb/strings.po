@@ -3008,3 +3008,23 @@ msgctxt "#31718"
 msgid "Left/Right switches between Channelgroups"
 msgstr ""
 
+msgctxt "#31719"
+msgid "Anime"
+msgstr ""
+
+msgctxt "#31720"
+msgid "Manage items from 'Anime' widget"
+msgstr ""
+
+msgctxt "#31724"
+msgid "Random anime"
+msgstr ""
+
+msgctxt "#31728"
+msgid "No anime library path configured"
+msgstr ""
+
+msgctxt "#31729"
+msgid "Set anime library path"
+msgstr ""
+
