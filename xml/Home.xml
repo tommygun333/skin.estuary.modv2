@@ -310,11 +310,9 @@
 						<include content="WidgetListPoster" condition="!String.IsEmpty(Skin.String(anime_source_path)) + !Skin.HasSetting(hide_anime_random)">
 							<param name="content_path" value="$INFO[Skin.String(anime_source_path)]"/>
 							<param name="sortby" value="random"/>
-							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31724]"/>
 							<param name="widget_header_focus" value="$INFO[Container(19200).ListItem.Title, | ]$INFO[Container(19200).ListItem.Year, (,)]"/>
 							<param name="widget_target" value="videos"/>
-							<param name="browse" value="never"/>
 							<param name="list_id" value="19200"/>
 						</include>
 					</control>
