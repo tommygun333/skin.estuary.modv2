@@ -339,36 +339,6 @@
 					<param name="textcolor" value="$VAR[SkinColorVar]" />
 					<param name="font" value="fontplot" />
 				</include>
-				<include content="InfoDialogMetadata">
-					<param name="control_id" value="170" />
-					<param name="label" value="$INFO[Container(60).ListItem.Duration(m),$LOCALIZE[180] : [COLOR white], $LOCALIZE[31684][/COLOR]]" />
-					<param name="visible" value="!String.IsEmpty(Container(60).ListItem.Duration)" />
-					<param name="textcolor" value="$VAR[SkinColorVar]" />
-					<param name="font" value="fontplot" />
-				</include>
-				<include content="InfoDialogMetadata">
-					<param name="control_id" value="171" />
-					<param name="label" value="$INFO[Container(60).ListItem.Cast,Cast : [COLOR white],[/COLOR]]" />
-					<param name="visible" value="!String.IsEmpty(Container(60).ListItem.Cast)" />
-					<param name="textcolor" value="$VAR[SkinColorVar]" />
-					<param name="font" value="fontplot" />
-				</include>
-				<include content="InfoDialogMetadata">
-					<param name="control_id" value="172" />
-					<param name="label" value="$INFO[Container(60).ListItem.Property(IMDbRating),IMDb : [COLOR white],[/COLOR]]" />
-					<param name="visible" value="!String.IsEmpty(Container(60).ListItem.Property(IMDbRating)) + String.IsEqual(Container(60).ListItem.Property(IsKodiSeerr),true)" />
-					<param name="textcolor" value="$VAR[SkinColorVar]" />
-					<param name="font" value="fontplot" />
-				</include>
-				<control type="textbox" id="173">
-					<left>0</left>
-					<right>50</right>
-					<height>100</height>
-					<font>fontplot</font>
-					<label>$INFO[Container(60).ListItem.Plot,Plot : [CR][COLOR white],[/COLOR]]</label>
-					<autoscroll delay="12000" time="4000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
-					<visible>!String.IsEmpty(Container(60).ListItem.Plot)</visible>
-				</control>
 			</control>
 		</control>
 		<control type="group">

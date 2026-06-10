@@ -1109,14 +1109,6 @@
 		<value condition="!String.IsEmpty(Skin.String(MediaFlagsColor))">$INFO[Skin.String(MediaFlagsColor)]</value>
 		<value>FFFFFFFF</value>
 	</variable>
-	<variable name="RatingFlagTextureVar">
-		<value condition="!String.IsEmpty(ListItem.Property(IMDbRating)) + String.IsEqual(ListItem.Property(IsKodiSeerr),true)">flags/imdb.png</value>
-		<value>flags/tmdb.png</value>
-	</variable>
-	<variable name="RatingFlagLabelVar">
-		<value condition="!String.IsEmpty(ListItem.Property(IMDbRating)) + String.IsEqual(ListItem.Property(IsKodiSeerr),true)">$INFO[ListItem.Property(IMDbRating)]</value>
-		<value>$INFO[ListItem.Rating]</value>
-	</variable>
 	<variable name="LyricsColor1Var">
 		<value condition="!String.IsEmpty(Skin.String(LyricsColor1))">$INFO[Skin.String(LyricsColor1)]</value>
 		<value>$VAR[SkinColorVar]</value>
