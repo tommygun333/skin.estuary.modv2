@@ -244,12 +244,6 @@
 					<onclick>ActivateWindow(1124)</onclick>
 					<visible>String.IsEqual(Container(211).ListItem.Property(widget),TVShowsWidget)</visible>
 				</control>
-				<control type="button" id="10015">
-					<label>$LOCALIZE[31720]</label>
-					<include>DefaultSettingButton</include>
-					<onclick>ActivateWindow(1144)</onclick>
-					<visible>String.IsEqual(Container(211).ListItem.Property(widget),AnimeWidget)</visible>
-				</control>
 				<control type="button" id="10008">
 					<label>$LOCALIZE[31300]</label>
 					<include>DefaultSettingButton</include>

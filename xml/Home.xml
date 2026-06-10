@@ -288,46 +288,6 @@
 						<param name="scrollbar_id" value="6010"/>
 					</include>
 				</control>
-				<control type="group" id="19000">
-					<animation effect="slide" end="502,0" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets) + !Skin.HasSetting(MinimizeMainMenu)">Conditional</animation>
-					<animation effect="slide" end="135,0" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets) + Skin.HasSetting(MinimizeMainMenu)">Conditional</animation>
-					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),AnimeWidget)</visible>
-					<include content="Visible_Right_Delayed_Home">
-						<param name="id" value="AnimeWidget"/>
-					</include>
-					<control type="grouplist" id="19001">
-						<include>WidgetGroupListCommon</include>
-						<pagecontrol>19010</pagecontrol>
-						<include content="WidgetListPoster" condition="!String.IsEmpty(Skin.String(anime_source_path)) + !Skin.HasSetting(hide_anime_recentlyadded)">
-							<param name="content_path" value="$INFO[Skin.String(anime_source_path)]"/>
-							<param name="sortby" value="dateadded"/>
-							<param name="sortorder" value="descending"/>
-							<param name="widget_header" value="$LOCALIZE[20387]"/>
-							<param name="widget_header_focus" value="$INFO[Container(19100).ListItem.Title, | ]$INFO[Container(19100).ListItem.Year, (,)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="19100"/>
-						</include>
-						<include content="WidgetListPoster" condition="!String.IsEmpty(Skin.String(anime_source_path)) + !Skin.HasSetting(hide_anime_random)">
-							<param name="content_path" value="$INFO[Skin.String(anime_source_path)]"/>
-							<param name="sortby" value="random"/>
-							<param name="widget_header" value="$LOCALIZE[31724]"/>
-							<param name="widget_header_focus" value="$INFO[Container(19200).ListItem.Title, | ]$INFO[Container(19200).ListItem.Year, (,)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="19200"/>
-						</include>
-					</control>
-					<include content="ImageWidget">
-						<param name="text_label" value="$LOCALIZE[31728]" />
-						<param name="button_label" value="$LOCALIZE[31729]" />
-						<param name="button_onclick" value="Skin.SetPath(anime_source_path)"/>
-						<param name="button_id" value="19300"/>
-						<param name="visible_2" value="false"/>
-						<param name="visible" value="String.IsEmpty(Skin.String(anime_source_path))"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="19010"/>
-					</include>
-				</control>
 				<control type="group" id="7000">
 					<animation effect="slide" end="502,0" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets) + !Skin.HasSetting(MinimizeMainMenu)">Conditional</animation>
 					<animation effect="slide" end="135,0" time="300" tween="sine" easing="inout" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets) + Skin.HasSetting(MinimizeMainMenu)">Conditional</animation>
@@ -1675,7 +1635,6 @@
 					<onright condition="String.IsEqual(Container(9000).ListItem.Property(widget),DiscWidget)">21000</onright>
 					<onright condition="String.IsEqual(Container(9000).ListItem.Property(widget),MoviesWidget)">5000</onright>
 					<onright condition="String.IsEqual(Container(9000).ListItem.Property(widget),TVShowsWidget)">6000</onright>
-					<onright condition="String.IsEqual(Container(9000).ListItem.Property(widget),AnimeWidget)">19000</onright>
 					<onright condition="String.IsEqual(Container(9000).ListItem.Property(widget),MusicWidget)">7000</onright>
 					<onright condition="String.IsEqual(Container(9000).ListItem.Property(widget),MusicVideosWidget)">16000</onright>
 					<onright condition="String.IsEqual(Container(9000).ListItem.Property(widget),LiveTVWidget)">12000</onright>

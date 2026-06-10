@@ -36,7 +36,6 @@
     <widget label="427" icon="icons/sidemenu/disc.png">DiscWidget</widget>
     <widget label="342" icon="icons/sidemenu/movies.png">MoviesWidget</widget>
     <widget label="20343" icon="icons/sidemenu/tv.png">TVShowsWidget</widget>
-    <widget label="31719" icon="icons/sidemenu/tv.png">AnimeWidget</widget>
     <widget label="2" icon="icons/sidemenu/music.png" >MusicWidget</widget>
     <widget label="20389" icon="icons/sidemenu/musicvideos.png">MusicVideosWidget</widget>
     <widget label="19020" icon="icons/sidemenu/livetv.png">LiveTVWidget</widget>
